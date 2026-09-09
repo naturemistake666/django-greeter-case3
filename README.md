@@ -15,13 +15,29 @@ Python 3.12, Django 6.1, SQLite.
 
 ## Как запустить
 
+Нужен Python 3.12 или новее — Django 6 на более старых версиях не работает.
+Проверить: `python3 -V`
+
+Создаём виртуальное окружение и ставим Django:
+
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
+```
+
+Создаём базу данных и запускаем сервер:
+
+```bash
 python manage.py migrate
 python manage.py runserver
 ```
 
 Открыть в браузере: `http://127.0.0.1:8000/`
+
+Остановить сервер — `Ctrl+C`, выйти из окружения — `deactivate`.
+При следующем запуске окружение нужно активировать снова:
+`source .venv/bin/activate`.
 
 ## Как запустить тесты
 
