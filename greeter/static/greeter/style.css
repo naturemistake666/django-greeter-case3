@@ -77,17 +77,12 @@ button[type="submit"]:hover {
   opacity: 0.9;
 }
 
-.errors {
+.error {
   margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: left;
-}
-
-.errors li {
   padding: 8px 10px;
   border-radius: 6px;
   background: #ffe8e8;
   color: #d63031;
   font-size: 14px;
+  text-align: left;
 }

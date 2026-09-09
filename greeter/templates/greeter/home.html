@@ -9,30 +9,26 @@
 </head>
 <body>
 
-  <main class="card">
+  <div class="card">
 
     {% if greeting_name %}
       <p class="greeting">Здравствуйте, {{ greeting_name }}!</p>
     {% endif %}
 
-    <form method="post" novalidate>
+    <form method="post">
       {% csrf_token %}
 
-      <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-      {{ form.name }}
+      <label for="name">Ваше имя</label>
+      <input type="text" name="name" id="name" placeholder="Введите ваше имя">
 
-      {% if form.name.errors %}
-        <ul class="errors">
-          {% for error in form.name.errors %}
-            <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
+      {% if error %}
+        <p class="error">{{ error }}</p>
       {% endif %}
 
-      <button type="submit">Submit</button>
+      <button type="submit">Отправить</button>
     </form>
 
-  </main>
+  </div>
 
 </body>
 </html>
